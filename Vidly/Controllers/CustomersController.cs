@@ -5,35 +5,40 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class CustomersController : Controller
-    {        
+    {
+        private ApplicationDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customers
         public ActionResult Index()
         {
-            return View(GetCustomers());
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
+            return View(customers);
         }
 
         //GET: Details/Id
         public ActionResult Details(int Id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == Id);
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
 
             if (customer == null)
                 return HttpNotFound();
 
             return View(customer);                        
-        }
-
-        public IEnumerable<Customer> GetCustomers()
-        {
-            return new List<Customer>
-            {
-                new Customer(1, "Lin Gatona"),
-                new Customer(2, "Belota")
-            };
         }
     }
 }
