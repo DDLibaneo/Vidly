@@ -237,9 +237,26 @@
     <Compile Include="Migrations\201906120039097_UpdateMembershipTypeNames2.Designer.cs">
       <DependentUpon>201906120039097_UpdateMembershipTypeNames2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906120154074_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201906120154074_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201906120154074_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906120214547_MakeBirthDateNullableOnCustomers.cs" />
+    <Compile Include="Migrations\201906120214547_MakeBirthDateNullableOnCustomers.Designer.cs">
+      <DependentUpon>201906120214547_MakeBirthDateNullableOnCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906120252240_TentandoFazerVoltarFuncionar.cs" />
+    <Compile Include="Migrations\201906120252240_TentandoFazerVoltarFuncionar.Designer.cs">
+      <DependentUpon>201906120252240_TentandoFazerVoltarFuncionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906120314293_AddNullBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\201906120314293_AddNullBirthDateToCustomer.Designer.cs">
+      <DependentUpon>201906120314293_AddNullBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -358,6 +375,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906120039097_UpdateMembershipTypeNames2.resx">
       <DependentUpon>201906120039097_UpdateMembershipTypeNames2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120154074_AddBirthDateToCustomer.resx">
+      <DependentUpon>201906120154074_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120214547_MakeBirthDateNullableOnCustomers.resx">
+      <DependentUpon>201906120214547_MakeBirthDateNullableOnCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120252240_TentandoFazerVoltarFuncionar.resx">
+      <DependentUpon>201906120252240_TentandoFazerVoltarFuncionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906120314293_AddNullBirthDateToCustomer.resx">
+      <DependentUpon>201906120314293_AddNullBirthDateToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
