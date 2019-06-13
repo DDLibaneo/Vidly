@@ -5,15 +5,39 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET 
+        ApplicationDbContext _context;
+
+        public MoviesController ()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose (bool disposing)
+        {
+            _context.Dispose();
+        }
+
+        // GET: Movies
         public ActionResult Index ()
         {
-            var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+
+            return View(movies);
+        }
+
+        // GET: Movies/Details/<Id>
+        public ActionResult Details (int Id)
+        {
+            var movies = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == Id);
+
+            if (movies == null)
+                return HttpNotFound();
 
             return View(movies);
         }
@@ -35,15 +59,6 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
-        }
-        
-        public IEnumerable<Movie> GetMovies()
-        {
-            return new List<Movie>
-            {
-                new Movie() { Id = 1, Name = "Diários de motocicleta" },
-                new Movie() { Id = 2, Name = "Sorry to bother you" }
-            };
-        }
+        }      
     }
 }

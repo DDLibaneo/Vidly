@@ -25,10 +25,22 @@ namespace Vidly.Models
 
         public Movie() { }
 
-        public Movie(int Id, string Name)
+        public Movie(int Id, string Name, DateTime ReleaseDate, DateTime DateAdded)
         {
             this.Id = Id;
             this.Name = Name;
+            this.ReleaseDate = ReleaseDate;
+            this.DateAdded = DateAdded;
+            NumberInStock = 0;
+        }
+
+        public Movie(int Id, string Name, DateTime ReleaseDate, DateTime DateAdded, int NumberInStock)
+        {
+            this.Id = Id;
+            this.Name = Name;
+            this.ReleaseDate = ReleaseDate;
+            this.DateAdded = DateAdded;
+            this.NumberInStock = NumberInStock;
         }
     }
 }

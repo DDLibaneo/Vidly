@@ -23,6 +23,12 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        public ActionResult New()
+        {
+
+            return View();
+        }
+
         // GET: Customers
         public ActionResult Index()
         {
@@ -30,7 +36,7 @@ namespace Vidly.Controllers
             return View(customers);
         }
 
-        //GET: Details/Id
+        //GET: Customers/Details/<Id>
         public ActionResult Details(int Id)
         {
             var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == Id);

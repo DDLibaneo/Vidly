@@ -9,7 +9,7 @@
     <li>Membership Type: @Model.MembershipType.Name</li>
     @if (Model.Birthdate.HasValue)
     {
-        <li>@Model.Birthdate.Value.ToString("yyyy/MM/dd", System.Globalization.CultureInfo.InvariantCulture)</li>
+        <li>@Model.Birthdate.Value.ToString("dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)</li>
     }    
 </ul>
 

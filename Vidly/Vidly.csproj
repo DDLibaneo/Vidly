@@ -253,6 +253,18 @@
     <Compile Include="Migrations\201906120314293_AddNullBirthDateToCustomer.Designer.cs">
       <DependentUpon>201906120314293_AddNullBirthDateToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906121844367_AddAttributesAndGenreToMovies.cs" />
+    <Compile Include="Migrations\201906121844367_AddAttributesAndGenreToMovies.Designer.cs">
+      <DependentUpon>201906121844367_AddAttributesAndGenreToMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906121855327_AddStringLengthToGenre.cs" />
+    <Compile Include="Migrations\201906121855327_AddStringLengthToGenre.Designer.cs">
+      <DependentUpon>201906121855327_AddStringLengthToGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906121856598_PopulateGenre.cs" />
+    <Compile Include="Migrations\201906121856598_PopulateGenre.Designer.cs">
+      <DependentUpon>201906121856598_PopulateGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -328,6 +340,8 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -387,6 +401,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906120314293_AddNullBirthDateToCustomer.resx">
       <DependentUpon>201906120314293_AddNullBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906121844367_AddAttributesAndGenreToMovies.resx">
+      <DependentUpon>201906121844367_AddAttributesAndGenreToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906121855327_AddStringLengthToGenre.resx">
+      <DependentUpon>201906121855327_AddStringLengthToGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906121856598_PopulateGenre.resx">
+      <DependentUpon>201906121856598_PopulateGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
