@@ -25,8 +25,44 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new CustomerFormViewModel(membershipTypes);
 
-            return View();
+            return View("CustomerForm", viewModel);
+        }
+
+        [HttpPost] //Esse método só pode ser chamado usando HttpPost, e não HttpGet
+        public ActionResult Save(Customer customer)
+        {
+            if(customer.Id == 0)
+            {
+                _context.Customers.Add(customer); //does not interfere in database, only memory
+            }
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                //TryUpdateModel(customerInDb); Não recomendado pq faz update em todas propriedades da model
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedNewsLatter = customer.IsSubscribedNewsLatter;                
+            }
+            
+            _context.SaveChanges(); //Generates Runs the SQL on the Database
+
+            return RedirectToAction("Index", "Customers");
+        }
+
+        public ActionResult Edit(int Id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == Id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var viewModel = new CustomerFormViewModel(_context.MembershipTypes.ToList(), customer);
+
+            return View("CustomerForm", viewModel); //Buscando a View "New" ao invés de "Edit"
         }
 
         // GET: Customers
