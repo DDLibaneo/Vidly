@@ -34,7 +34,12 @@ namespace Vidly.Controllers
         [HttpPost] //Esse método só pode ser chamado usando HttpPost, e não HttpGet
         public ActionResult Save(Customer customer)
         {
-            if(customer.Id == 0)
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel(_context.MembershipTypes.ToList(), customer);
+                return View("CustomerForm", viewModel);
+            }
+            if (customer.Id == 0)
             {
                 _context.Customers.Add(customer); //does not interfere in database, only memory
             }
