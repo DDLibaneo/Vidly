@@ -265,12 +265,21 @@
     <Compile Include="Migrations\201906121856598_PopulateGenre.Designer.cs">
       <DependentUpon>201906121856598_PopulateGenre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906170306089_AddStaticFieldsMembershipType.cs" />
+    <Compile Include="Migrations\201906170306089_AddStaticFieldsMembershipType.Designer.cs">
+      <DependentUpon>201906170306089_AddStaticFieldsMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906170333473_PutRequiredBackOnCustomerName.cs" />
+    <Compile Include="Migrations\201906170333473_PutRequiredBackOnCustomerName.Designer.cs">
+      <DependentUpon>201906170333473_PutRequiredBackOnCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MaxAndMinNumberInStock.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Minimum18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -414,6 +423,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906121856598_PopulateGenre.resx">
       <DependentUpon>201906121856598_PopulateGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906170306089_AddStaticFieldsMembershipType.resx">
+      <DependentUpon>201906170306089_AddStaticFieldsMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906170333473_PutRequiredBackOnCustomerName.resx">
+      <DependentUpon>201906170333473_PutRequiredBackOnCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

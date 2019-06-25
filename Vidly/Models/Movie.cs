@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace Vidly.Models
 {
     public class Movie
     {
-        // this is apparently known as CLR object or POCO
+        //This type of class is known as CLR object or POCO
         //It is used to represent State, and it doesn't have complicated methods, just properties
         public int Id { get; set; }
 
@@ -32,6 +32,7 @@ namespace Vidly.Models
 
         [Required]
         [Display(Name = "Number in stock")]
+        [MaxAndMinNumberInStock]
         public int NumberInStock { get; set; }
 
         public Movie() { }

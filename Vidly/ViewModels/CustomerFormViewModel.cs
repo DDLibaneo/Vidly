@@ -18,7 +18,12 @@ namespace Vidly.ViewModels
             }
         }
 
-        public CustomerFormViewModel() { }       
+        public CustomerFormViewModel() { }
+
+        public CustomerFormViewModel(IEnumerable<MembershipType> membershipTypes)
+        {
+            this.MembershipTypes = membershipTypes;
+        }
 
         public CustomerFormViewModel(IEnumerable<MembershipType> membershipTypes, Customer customer)
         {

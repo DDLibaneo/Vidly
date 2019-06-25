@@ -26,12 +26,13 @@ namespace Vidly.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new CustomerFormViewModel(membershipTypes);
+            var viewModel = new CustomerFormViewModel(membershipTypes, new Customer());
 
             return View("CustomerForm", viewModel);
         }
 
         [HttpPost] //Esse método só pode ser chamado usando HttpPost, e não HttpGet
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
