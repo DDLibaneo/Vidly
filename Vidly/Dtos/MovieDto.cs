@@ -24,8 +24,7 @@ namespace Vidly.Dtos
         public DateTime DateAdded { get; set; }
 
         [Required]
-        //[MaxAndMinNumberInStock]
+        [Range(1, 20)]
         public int NumberInStock { get; set; }
-
     }
 }
