@@ -80,7 +80,7 @@ namespace Vidly.Controllers.Api
             
             _context.SaveChanges();
 
-            return Created(new Uri(Request.RequestUri + "/" + customerInDb.Id), customerDto);
+            return Ok();
         }
 
         // DELETE /api/customers/1
