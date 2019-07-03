@@ -31,8 +31,8 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
 
         [Required]
-        [Display(Name = "Number in stock")]
-        [MaxAndMinNumberInStock]
+        [Range(1, 20)]
+        [Display(Name = "Number in stock")]        
         public int NumberInStock { get; set; }
 
         public Movie() { }
