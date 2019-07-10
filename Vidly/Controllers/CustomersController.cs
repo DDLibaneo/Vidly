@@ -74,8 +74,10 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
-            return View(customers);
+            /* Since we are now using ajax in the view to request the list of customers we don't need to return the list of customers anymore. */
+            // var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
+            // return View(customers);
+            return View();
         }
 
         //GET: Customers/Details/<Id>
