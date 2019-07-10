@@ -10,11 +10,11 @@ namespace Vidly
         {
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/bootstrap.js",
-                        "~/Scripts/respond.js",
+                        "~/Scripts/bootstrap.js",                        
                         "~/Scripts/bootbox.js",
-                        "~/Scripts/datatables/jquery.datatables.js",
-                        "~/Scripts/datatables/datatables.bootstrap.js"));
+                        "~/Scripts/respond.js",
+                        "~/Scripts/datatables/jquery.dataTables.js",
+                        "~/Scripts/datatables/dataTables.bootstrap.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*")); //que está nesse endereço é comprimido no endereço do bundle
