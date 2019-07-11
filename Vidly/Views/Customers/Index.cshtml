@@ -34,7 +34,7 @@
                     {
                         data: "name", // in the data property we supply where to get the data for this column. In this case the DataTable will look for the "name" property of the customer object.
                         render: function (data, type, customer) { // this function will be called for rendering each row in the table. 1st parameter is the data property, 2nd parameter is the type for the column, and the 3rd parameter is is actual object, or row we're rendering.
-                            return "<a href='/customer/edit/'" + customer.id + "'>" + customer.name + "</a>"; // in this function we return a string
+                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>"; // in this function we return a string
                         }
                     },
                     {
@@ -42,8 +42,8 @@
                     },
                     {
                         data: "id",
-                        render: function (data) {
-                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>"; // in this case, the data parameter is the id of the customer.
+                        render: function (data) { // in this case, the data parameter is the id of the customer.
+                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>"; 
                         }
                     }
 
