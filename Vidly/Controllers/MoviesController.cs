@@ -23,6 +23,25 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        // GET: Movies
+        public ActionResult Index()
+        {
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+
+            return View(movies);
+        }
+
+        // GET: Movies/Details/<Id>
+        public ActionResult Details(int Id)
+        {
+            var movies = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == Id);
+
+            if (movies == null)
+                return HttpNotFound();
+
+            return View(movies);
+        }
+
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -70,25 +89,6 @@ namespace Vidly.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Movies");
-        }
-
-        // GET: Movies
-        public ActionResult Index ()
-        {
-            var movies = _context.Movies.Include(m => m.Genre).ToList();
-
-            return View(movies);
-        }
-
-        // GET: Movies/Details/<Id>
-        public ActionResult Details (int Id)
-        {
-            var movies = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == Id);
-
-            if (movies == null)
-                return HttpNotFound();
-
-            return View(movies);
         }
 
         // GET: Movies/Random

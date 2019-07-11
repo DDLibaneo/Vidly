@@ -23,6 +23,26 @@ namespace Vidly.Controllers
             _context.Dispose();
         }
 
+        // GET: Customers
+        public ActionResult Index()
+        {
+            /* Since we are now using ajax in the view to request the list of customers we don't need to return the list of customers anymore. */
+            // var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
+            // return View(customers);
+            return View();
+        }
+
+        //GET: Customers/Details/<Id>
+        public ActionResult Details(int Id)
+        {
+            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == Id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            return View(customer);
+        }
+
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
@@ -69,26 +89,6 @@ namespace Vidly.Controllers
             var viewModel = new CustomerFormViewModel(_context.MembershipTypes.ToList(), customer);
 
             return View("CustomerForm", viewModel); //Buscando a View "New" ao invés de "Edit"
-        }
-
-        // GET: Customers
-        public ActionResult Index()
-        {
-            /* Since we are now using ajax in the view to request the list of customers we don't need to return the list of customers anymore. */
-            // var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
-            // return View(customers);
-            return View();
-        }
-
-        //GET: Customers/Details/<Id>
-        public ActionResult Details(int Id)
-        {
-            var customer = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == Id);
-
-            if (customer == null)
-                return HttpNotFound();
-
-            return View(customer);                        
         }
     }
 }
