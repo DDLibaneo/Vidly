@@ -5,7 +5,7 @@ namespace Vidly.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Phone]
+        [StringLength(50)]
         public string Phone { get; set; }
 
         [Required]

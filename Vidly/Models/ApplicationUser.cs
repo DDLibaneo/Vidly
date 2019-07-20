@@ -10,7 +10,7 @@ namespace Vidly.Models
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        [Phone]
+        [StringLength(50)]
         public string Phone { get; set; }
 
         [Required]

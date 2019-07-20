@@ -5,7 +5,7 @@ namespace Vidly.Models
     public class RegisterViewModel
     {
         [Required]
-        [Phone]
+        [StringLength(50)]
         public string Phone { get; set; }
 
         [Required]
