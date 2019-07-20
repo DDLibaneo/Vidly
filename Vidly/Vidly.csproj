@@ -301,6 +301,14 @@
     <Compile Include="Migrations\201907112319591_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>201907112319591_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907192032514_AddPhoneToModels.cs" />
+    <Compile Include="Migrations\201907192032514_AddPhoneToModels.Designer.cs">
+      <DependentUpon>201907192032514_AddPhoneToModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907192219222_AddStringLengthAnnotationToPhoneFieldOnUserModels.cs" />
+    <Compile Include="Migrations\201907192219222_AddStringLengthAnnotationToPhoneFieldOnUserModels.Designer.cs">
+      <DependentUpon>201907192219222_AddStringLengthAnnotationToPhoneFieldOnUserModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -643,6 +651,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907112319591_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>201907112319591_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907192032514_AddPhoneToModels.resx">
+      <DependentUpon>201907192032514_AddPhoneToModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907192219222_AddStringLengthAnnotationToPhoneFieldOnUserModels.resx">
+      <DependentUpon>201907192219222_AddStringLengthAnnotationToPhoneFieldOnUserModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
