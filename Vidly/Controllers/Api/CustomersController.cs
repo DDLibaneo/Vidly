@@ -21,10 +21,15 @@ namespace Vidly.Controllers.Api
         }
 
         // GET /api/customers
-        public IHttpActionResult GetCustomers()
+        public IHttpActionResult GetCustomers(string query = null)
         {
-            var customerDtos = _context.Customers
-                .Include(c => c.MembershipType)
+            var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            var customerDtos = customersQuery
                 .ToList()
                 .Select(Mapper.Map<Customer, CustomerDto>); // sem o () no método Map pois queremos apenas a referência a esse método, para passar ao parametro delegate.
 
@@ -72,7 +77,7 @@ namespace Vidly.Controllers.Api
         {
             if (!ModelState.IsValid)
             {
-                //throw new HttpResponseException(HttpStatusCode.BadRequest);
+                // throw new HttpResponseException(HttpStatusCode.BadRequest);
                 return BadRequest();
             }                
 
@@ -80,7 +85,7 @@ namespace Vidly.Controllers.Api
 
             if (customerInDb == null)
             {
-                //throw new HttpResponseException(HttpStatusCode.NotFound);
+                // throw new HttpResponseException(HttpStatusCode.NotFound);
                 return NotFound();
             }                
 

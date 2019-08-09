@@ -35,7 +35,14 @@ namespace Vidly.Models
         [Display(Name = "Number in stock")]        
         public int NumberInStock { get; set; }
 
-        public Movie() { }
+        [Range(0, 20)]
+        public int NumberAvailable { get; set; }
+
+        public Movie()
+        {
+            NumberInStock = 0;
+            NumberAvailable = NumberInStock;
+        }
 
         public Movie(int Id, string Name, DateTime ReleaseDate, DateTime DateAdded)
         {
@@ -44,6 +51,7 @@ namespace Vidly.Models
             this.ReleaseDate = ReleaseDate;
             this.DateAdded = DateAdded;
             NumberInStock = 0;
+            NumberAvailable = NumberInStock;
         }
 
         public Movie(int Id, string Name, DateTime ReleaseDate, DateTime DateAdded, int NumberInStock)
@@ -53,6 +61,7 @@ namespace Vidly.Models
             this.ReleaseDate = ReleaseDate;
             this.DateAdded = DateAdded;
             this.NumberInStock = NumberInStock;
+            NumberAvailable = NumberInStock;
         }
     }
 }
