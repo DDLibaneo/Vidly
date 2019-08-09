@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
+using System.Runtime.Caching;
 
 namespace Vidly.Controllers
 {
@@ -24,11 +25,18 @@ namespace Vidly.Controllers
         }
 
         // GET: Customers
-        public ActionResult Index()
+        public ViewResult Index()
         {
             /* Since we are now using ajax in the view to request the list of customers we don't need to return the list of customers anymore. */
             // var customers = _context.Customers.Include(c => c.MembershipType).ToList(); //A query só é executada na tabela do banco quando é feita uma iteração
             // return View(customers);
+
+            //if (MemoryCache.Default["Genres"] == null) //Coloca os Genres no Cache
+            //{
+            //    MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            //}
+            //var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
             return View();
         }
 
