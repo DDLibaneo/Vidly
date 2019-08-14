@@ -30,6 +30,10 @@ namespace Vidly.ViewModels
         [MaxAndMinNumberInStock]
         public int? NumberInStock { get; set; }
 
+        [Required]
+        [Display(Name = "Number in stock")]
+        public int? NumberAvailable { get; set; }
+
         public string Title
         {
             get
@@ -57,6 +61,7 @@ namespace Vidly.ViewModels
             this.GenreId = Movie.GenreId;
             this.ReleaseDate = Movie.ReleaseDate;
             this.NumberInStock = Movie.NumberInStock;
+            this.NumberAvailable = Movie.NumberInStock;
         }
     }
 }
