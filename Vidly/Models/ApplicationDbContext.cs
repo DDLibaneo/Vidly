@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Vidly.Models
@@ -13,6 +14,12 @@ namespace Vidly.Models
         public DbSet<Rental> Rentals { get; set; }
 
         public ApplicationDbContext() : base("DefaultConnection", throwIfV1Schema: false) { }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
 
         public static ApplicationDbContext Create()
         {

@@ -340,6 +340,10 @@
     <Compile Include="Migrations\201908071909322_AddNumberAvailablePropertyInMovieModel.Designer.cs">
       <DependentUpon>201908071909322_AddNumberAvailablePropertyInMovieModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011212324060_OnModelCreating.cs" />
+    <Compile Include="Migrations\202011212324060_OnModelCreating.Designer.cs">
+      <DependentUpon>202011212324060_OnModelCreating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Rental.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
@@ -494,6 +498,7 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="AppSettings.config" />
     <None Include="Properties\PublishProfiles\GoDaddyProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Testing.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -721,6 +726,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908071909322_AddNumberAvailablePropertyInMovieModel.resx">
       <DependentUpon>201908071909322_AddNumberAvailablePropertyInMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011212324060_OnModelCreating.resx">
+      <DependentUpon>202011212324060_OnModelCreating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
